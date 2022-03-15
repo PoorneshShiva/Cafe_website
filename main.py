@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, jsonify, render_template, request, \
     get_flashed_messages, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
@@ -25,10 +27,11 @@ class AddCafe(FlaskForm):
 
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "dsjfalsdf093215809"
+app.config["SECRET_KEY"] = os.environ.get('SECRET_KEY')
 Bootstrap(app)
 # Connect to Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///cafes.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

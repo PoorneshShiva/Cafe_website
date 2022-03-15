@@ -5,3 +5,4 @@ SQLAlchemy==1.4.32
 WTForms==3.0.1
 Flask-SQLAlchemy==2.5.1
 Flask-Bootstrap==3.3.7.1
+Flask-WTF==1.0.0

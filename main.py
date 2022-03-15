@@ -30,7 +30,7 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get('SECRET_KEY')
 Bootstrap(app)
 # Connect to Database
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///cafes.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgres://mifjhfiridtxbl:37de01f06b9d48a54ecb127edbe29c4ba30c293e5a515c665e3b3204ed83e49d@ec2-44-195-191-252.compute-1.amazonaws.com:5432/d8g7pk9dvtbb7j', 'sqlite:///cafes.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e34a22c8-086f-4ab2-b9c1-3ac7ae27b3c0" name="Changes" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +81,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DATABASE_URL" value="postgres://mifjhfiridtxbl:37de01f06b9d48a54ecb127edbe29c4ba30c293e5a515c665e3b3204ed83e49d@ec2-44-195-191-252.compute-1.amazonaws.com:5432/d8g7pk9dvtbb7j" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\Wannacry\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -191,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647316959574</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Initial Commit">
+      <created>1647317391268</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647317391268</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

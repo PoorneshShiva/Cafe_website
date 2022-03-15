@@ -1,0 +1,130 @@
+{% include "header.html" %}
+<body>
+<section class="navigation">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg- ">
+            <div class="container-fluid">
+                <a class="navbar-brand brand-name ms-5" href="#">Venture Cafe's</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-5">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" href="/location">Location</a>
+                        <a class="nav-link" href="/location/{{city}}/add-new-cafe">Add New Cafe</a>
+                        <a class="nav-link" href="#footer">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" >
+        <h1 class="location_title">{{city}}</h1>
+        <p class="location_subtitle"> Check out the places where it can fullfill your requirements.</p>
+    </div>
+</section>
+<section>
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p style="font-size:2rem;color:red;text-align:center;">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+{% for each in cafes %}
+
+    <form action="{{url_for('delete_cafe',location=each.city,name=each.name)}}" method="post">
+    <div id="enter" class="alert alert-primary" role="alert" style="display:none;">
+
+            <input name="secret_key" type=text placeholder="Enter the secret Key" style="width:50rem;height:2.5rem;margin:2rem 25%;">
+            <br>
+            <input type="submit" value="Delete" id="" class="btn btn-primary" style="text-align:center;margin:0 25%;">
+        </div>
+        </form>
+    <div class="container ">
+
+        <div class="card cafe_list">
+            <div class="col ">
+
+
+                <img src={{each.img_url}} class="city_cafe_image" alt="...">
+                <div class="container cafe_has">
+                    <h5 class="card-title">{{each.name.title()}}</h5>
+                    <a href="{{each.map_url}}"><i class="fa fa-solid fa-map-marker fa-2x cafe_spec"></i><span class="location">{{each.location}}</span></a>
+                    {% if each.has_wifi: %}
+                    <p class="cafe_has"> Wifi: <i class="fa fa-wifi"></i>Strong </p>
+                    {% else: %}
+                    <p class="cafe_has"> Wifi: <i class="fa fa-wifi"></i> Weak</p>
+                    {% endif %}
+                    {% if each.has_toilet: %}
+                    <p class="cafe_has"> Toilet: <i class="fa-solid fa-toilet"></i> Great </p>
+                    {% else: %}
+                    <p class="cafe_has"> Toilet: <i class="fa fa-wifi"></i> None</p>
+                    {% endif %}
+
+                    {% if each.has_sockets: %}
+                    <p class="cafe_has"> Sockets: <i class="fa-solid fa-plug"></i> Few </p>
+                    {% else: %}
+                    <p class="cafe_has"> Sockets: <i class="fa-solid fa-plug"></i> None</p>
+                    {% endif %}
+                    {% if each.coffee_price|float <= 1.50: %}
+                    <p class="cafe_has"> Coffee Price: <i class="fa-solid fa-sack-dollar"></i> Costlier </p>
+                    {% else: %}
+                    <p class="cafe_has"> Coffee Price: <i class="fa-solid fa-sack-dollar"></i> Cheaper </p>
+                    {% endif %}
+                    <br>
+
+
+
+                </div>
+                <input type="submit" class="btn btn-primary delete_btn" onclick="ShowForm()" value="Delete">
+            </div>
+        </div>
+
+
+    </div>
+ {% endfor %}
+
+
+</section>
+<section id="footer" class="footer">
+    <div class="container container-lg-12 container-sm-12 container-md-12">
+        <div class="container container-lg-12 container-sm-12 container-md-12 social_footer ">
+            <h1 class="contact_title">Contact Me</h1>
+            <div class="row  row-cols-2 row-cols-lg-4 gx-4 g-lg-4 align-items-start social_row">
+                <div class="col">
+                    <a class="social" href="https://www.linkedin.com/in/poornesh-shiva-9529a0215/"> <i class="fa fa-brands fa-linkedin fa-3x "></i></a><br>
+                    <p class="social_name">Linkedin</p>
+                </div>
+                <div class="col">
+                    <a class="social" href="https://github.com/PoorneshShiva"><i class="fa fa-brands fa-github fa-3x "></i></a><br>
+                    <p class="social_name">Github</p>
+                </div>
+                <div class="col">
+                    <a class="social" href="https://twitter.com/2strokelover46"><i class="fa fa-brands fa-twitter-square fa-3x "></i></a><br>
+                    <p class="social_name">Twitter</p>
+                </div>
+                <div class="col">
+                    <a class="social" href="mailto:poorneshshiva@gmail.com"><i class="fa fa-solid fa-envelope fa-3x"></i></a>
+                    <br>
+                    <p class="social_name">Mail</p>
+                </div>
+
+            </div>
+
+            <p class="copyright">© Copyright 2022 Venture Cafe's</p>
+        </div>
+    </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+
+function ShowForm()
+{
+document.getElementById('enter').style.display = "";
+}
+
+</script>
+</body>

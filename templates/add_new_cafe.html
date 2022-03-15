@@ -1,0 +1,114 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+
+
+
+
+{% include "header.html" %}
+{%block content%}
+
+
+
+
+<body>
+<section class="navigation">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg- ">
+            <div class="container-fluid">
+                <a class="navbar-brand brand-name ms-5" href="#">Venture Cafe's</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-5">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                        <a class="nav-link " href="/location">Location</a>
+                        <a class="nav-link active" href="/location/{{city}}/add-new-cafe">Add New Cafe</a>
+                        <a class="nav-link" href="#footer">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" >
+        <h1 class="location_title">{{city}}</h1>
+        <p class="location_subtitle"> Check out the places where it can fullfill your requirements.</p>
+    </div>
+</section>
+<section>
+
+    <div class="container ">
+{% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p style="font-size:2rem;color:red;">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+
+        <form action='/location/{{form.city}}/add-new-cafe' method="post">
+        <h1>{{wtf.form_field(form.name, novalidate=True)}}</h1>
+
+        <h1>{{wtf.form_field(form.map_url)}}</h1>
+        <h1>{{wtf.form_field(form.img_url)}}</h1>
+        <h1>{{wtf.form_field(form.location)}}</h1>
+        <h1>{{wtf.form_field(form.seats)}}</h1>
+        <h1>{{form.has_toilet.label}}</h1>
+        <p>{{wtf.form_field(form.has_toilet)}}</p>
+        <h1>{{form.has_wifi.label}}</h1>
+        <p>{{wtf.form_field(form.has_wifi)}}</p>
+        <h1>{{form.has_sockets.label}}</h1>
+
+        <p>{{wtf.form_field(form.has_sockets)}}</p>
+        <h1>{{form.can_take_calls.label}}</h1>
+
+        <p>{{wtf.form_field(form.can_take_calls)}}</p>
+
+        <h1>{{wtf.form_field(form.coffee_price, novalidate=True)}}</h1>
+
+        <h1 hidden>{{wtf.form_field(form.city)}}</h1>
+
+            <input type="submit">
+
+</form>
+
+    </div>
+
+
+
+</section>
+<section id="footer" class="footer">
+    <div class="container container-lg-12 container-sm-12 container-md-12">
+        <div class="container container-lg-12 container-sm-12 container-md-12 social_footer ">
+            <h1 class="contact_title">Contact Me</h1>
+            <div class="row  row-cols-2 row-cols-lg-4 gx-4 g-lg-4 align-items-start social_row">
+                <div class="col">
+                    <a class="social" href="https://www.linkedin.com/in/poornesh-shiva-9529a0215/"> <i class="fa fa-brands fa-linkedin fa-3x "></i></a><br>
+                    <p class="social_name">Linkedin</p>
+                </div>
+                <div class="col">
+                    <a class="social" href="https://github.com/PoorneshShiva"><i class="fa fa-brands fa-github fa-3x "></i></a><br>
+                    <p class="social_name">Github</p>
+                </div>
+                <div class="col">
+                    <a class="social" href="https://twitter.com/2strokelover46"><i class="fa fa-brands fa-twitter-square fa-3x "></i></a><br>
+                    <p class="social_name">Twitter</p>
+                </div>
+                <div class="col">
+                    <a class="social" href="mailto:poorneshshiva@gmail.com"><i class="fa fa-solid fa-envelope fa-3x"></i></a>
+                    <br>
+                    <p class="social_name">Mail</p>
+                </div>
+
+            </div>
+
+            <p class="copyright">© Copyright 2022 Venture Cafe's</p>
+        </div>
+    </div>
+
+</section>
+</body>
+{% endblock %}

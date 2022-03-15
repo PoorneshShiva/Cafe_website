@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e34a22c8-086f-4ab2-b9c1-3ac7ae27b3c0" name="Changes" comment="Updated Procfile">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="e34a22c8-086f-4ab2-b9c1-3ac7ae27b3c0" name="Changes" comment="Intial Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647313990231</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Intial Commit">
+      <created>1647314233882</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647314233882</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,9 +150,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Intial Commit" />
     <MESSAGE value="Updated Requirements with the gunicorn" />
     <MESSAGE value="Updated Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Procfile" />
+    <MESSAGE value="Intial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Intial Commit" />
   </component>
 </project>

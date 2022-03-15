@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, render_template, request, \
     get_flashed_messages, flash, redirect, url_for
-import pytest
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import *
 import random
